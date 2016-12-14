@@ -1,0 +1,42 @@
+<nav class="navbar navbar-light bg-faded pb-navbar navbar-fixed-top">
+    <a class="navbar-brand" routerLink="/">Plinkobit HRMS</a>
+    <ul [hidden]='!authService.isAuthenticated' class="nav navbar-nav pull-xs-right">
+        <li class="nav-item">
+            <a class="nav-link" (click)="logout()" href="javascript:void(0)">Logout</a>
+        </li>
+    </ul>
+</nav>
+<div [hidden]='!authService.isAuthenticated' class='pb-sidebar'>
+    <ul class="nav">
+        <li class="nav-item">
+            <a routerLink="/dashboard" routerLinkActive="active" class='nav-link'>Dashboard</a>
+        </li>
+        <!--<li class="nav-item">
+                <a routerLink="/heroes" routerLinkActive="active" class='nav-link'>Heroes</a>
+            </li>-->
+        <li class="nav-item">
+            <!--<a class="nav-link" href="#">Features</a>-->
+            <a routerLink="/holidays" routerLinkActive="active" class='nav-link'>Holidays</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="/attendance" routerLinkActive="active" class='nav-link'>Attendance</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="/leaves" routerLinkActive="active" class='nav-link'>Leaves</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="nav-link">Admin</a>
+        </li>
+        <div class="pb-sub-menu-container">
+            <li class="nav-item">
+                <a routerLink="/admin/users" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="nav-link sub-nav-link">Users</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/admin/holidays" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="nav-link sub-nav-link">Manage Holidays</a>
+            </li>
+        </div>
+    </ul>
+</div>
+<div class='pb-content' [ngClass]="{'pb-login-content': !authService.isAuthenticated}">
+    <router-outlet></router-outlet>
+</div>

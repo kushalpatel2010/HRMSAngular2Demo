@@ -1,0 +1,26 @@
+.login-container {
+    margin-right: auto!important;
+    margin-left: auto!important;
+    width: 370px;
+    margin-top: 130px;
+}
+
+/* Extra small devices (portrait phones, less than 544px)*/
+@media (max-width: 543px) { 
+    .login-container {
+        margin-right: auto!important;
+        margin-left: auto!important;
+        width: 100%;
+        margin-top: 20px;
+    }
+ }
+
+/* Small devices (landscape phones, 544px and up)*/
+@media (min-width: 544px) and (max-width: 767px) { 
+    .login-container {
+        margin-right: auto!important;
+        margin-left: auto!important;
+        width: 100%;
+        margin-top: 20px;
+    }
+ }

@@ -1,0 +1,26 @@
+<div class='pb-page-title'>
+    Add leave
+</div>
+
+<form (ngSubmit)="onSubmit()" #leaveForm="ngForm">
+    {{diagnostic}}
+    <div class="form-group">
+        <label for="leaveType">Leave type</label>
+        <select class="form-control" id="leaveType" [(ngModel)]="leave.leaveType" name="leaveType" required>
+            <option *ngFor="let l of leaveTypes" [value]="l">{{l}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="leaveStartDate">Leave start date</label>
+        <input type="text" class="form-control" id="leaveStartDate" [(ngModel)]="leave.leaveStartDate" name="leaveStartDate" #leaveStartDate="ngModel"
+            required/>
+        <div [hidden]="leaveStartDate.valid || leaveStartDate.pristine">
+            <small class="form-text text-muted">Leave start date is required</small>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="leaveEndDate">Leave end date</label>
+        <input class="form-control" placeholder="yyyy-mm-dd" name="leaveEndDate" [(ngModel)]="leave.leaveEndDate" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!leaveForm.form.valid">Submit</button>
+</form>

@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+.container-fluid {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+/* everywhere else */
+* {
+    font-family: 'Roboto', sans-serif;;
+}
+.pb-page-title{
+    font-size: 21px;
+    color: black;
+    padding: 5px 0px;
+    margin-bottom: 10px;
+}
+.table th
+{
+    border-top: none !important;
+    border-bottom: 0.5px solid lightgrey;
+}
+.table td, .table th{
+    /*padding-left: 0px;*/
+}
+.clearboth{
+    float: none;
+}
+.font-12{
+    font-size: 12px;
+}
+.top-luggage-10{
+    margin-top: 10px
+}
+.bottom-luggage-10{
+    margin-bottom: 10px;
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}

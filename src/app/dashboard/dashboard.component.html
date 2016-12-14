@@ -1,0 +1,11 @@
+<div class='pb-page-title'>Dashboard</div>
+
+<div class="row">
+    <div class="col-lg-4" *ngIf="nextHoliday">
+        <div class="card card-block">
+            <h4 class="card-title">Next Holiday</h4>
+            <p class="card-text">{{nextHoliday.holidayName}} on {{nextHoliday.holidayDate | date: 'dd/MM/yyyy'}}</p>
+            <a class="card-link" routerLink="/holidays">All holidays</a>
+        </div>
+    </div>
+</div>

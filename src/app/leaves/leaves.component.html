@@ -1,0 +1,88 @@
+<div class='pb-page-title'>
+    Leaves
+</div>
+
+<div class='row bottom-luggage-10'>
+    <div class='col-lg-6'>
+        <button type="button" class="btn btn-primary btn-sm" (click)="navigateToAdd()">Add leave</button>
+    </div>
+</div>
+
+<div class='row'>
+    <div class="col-lg-12">
+        <ngb-tabset #t="ngbTabset">
+            <ngb-tab title="All" id="all-leaves">
+                <template ngbTabTitle> <span class='tag tag-default'>{{leaves.length}}</span></template>
+                <template ngbTabContent>
+                    <table class='table'>
+                        <tr>
+                            <th>Leave start date</th>
+                            <th>Leave end date</th>
+                            <th>Leave in days</th>
+                            <th>Leave type</th>
+                            <th>Reason</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                        <tr *ngFor='let leave of leaves'>
+                            <td>{{leave.leaveStartDate | date: 'dd/MM/yyyy'}}</td>
+                            <td>{{leave.leaveEndDate | date: 'dd/MM/yyyy'}}</td>
+                            <td>{{leave.leaveInDays}}</td>
+                            <td>{{leave.leaveType}}</td>
+                            <td>{{leave.reason}}</td>
+                            <td>{{leave.status}}</td>
+                            <td><button type="button" class="btn btn-primary btn-sm" (click)="navigateToEdit(leave)">Edit</button></td>
+                        </tr>
+                    </table>
+                </template>
+            </ngb-tab>
+            <ngb-tab id="approved-leaves">
+                <template ngbTabTitle>Approved <span class='tag tag-default'>{{approvedLeaves.length}}</span></template>
+                <template ngbTabContent>
+
+                    <table class='table'>
+                        <tr>
+                            <th>Leave start date</th>
+                            <th>Leave end date</th>
+                            <th>Leave in days</th>
+                            <th>Leave type</th>
+                            <th>Reason</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr *ngFor='let leave of approvedLeaves'>
+                            <td>{{leave.leaveStartDate | date: 'dd/MM/yyyy'}}</td>
+                            <td>{{leave.leaveEndDate | date: 'dd/MM/yyyy'}}</td>
+                            <td>{{leave.leaveInDays}}</td>
+                            <td>{{leave.leaveType}}</td>
+                            <td>{{leave.reason}}</td>
+                            <td>{{leave.status}}</td>
+                        </tr>
+                    </table>
+                </template>
+            </ngb-tab>
+            <ngb-tab id="pending-leaves">
+                <template ngbTabTitle>Pending <span class='tag tag-default'>{{pendingLeaves.length}}</span></template>
+                <template ngbTabContent>
+                    <table class='table'>
+                        <tr>
+                            <th>Leave start date</th>
+                            <th>Leave end date</th>
+                            <th>Leave in days</th>
+                            <th>Leave type</th>
+                            <th>Reason</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr *ngFor='let leave of pendingLeaves'>
+                            <td>{{leave.leaveStartDate | date: 'dd/MM/yyyy'}}</td>
+                            <td>{{leave.leaveEndDate | date: 'dd/MM/yyyy'}}</td>
+                            <td>{{leave.leaveInDays}}</td>
+                            <td>{{leave.leaveType}}</td>
+                            <td>{{leave.reason}}</td>
+                            <td>{{leave.status}}</td>
+                        </tr>
+                    </table>
+                </template>
+            </ngb-tab>
+        </ngb-tabset>
+    </div>
+</div>
